@@ -11,9 +11,8 @@ build:
   number: 0
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('fortran') }}
+#  build:
+#    - {{ compiler('c') }}
   host:
     - zlib
 
