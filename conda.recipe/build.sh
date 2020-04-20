@@ -1,8 +1,7 @@
 #!/bin/bash
 set -ev
 
-./configure
-(cd source_c && make CC=${CC} sav_gol)
+./configure && make
 mkdir -p $PREFIX/bin
 cp source_c/sav_gol $PREFIX/bin/sav_gol
 
