@@ -1,22 +1,12 @@
+language: c
 os:
   - linux
   - osx
 
-install: 
-  - if [[ $TRAVIS_OS_NAME == "osx" ]]; then
-      MINICONDA_OS=MacOSX;
-    else
-      MINICONDA_OS=Linux;
-    fi
-  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-${MINICONDA_OS}-x86_64.sh -O miniconda.sh
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - source "$HOME/miniconda/etc/profile.d/conda.sh"
-  - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
-  - conda create -q -n myapp python=3.6 conda-build anaconda-client
-  - conda activate myapp
+install:
+  - wget https://www.pks.mpg.de/~tisean/TISEAN_3.0.1.tar.gz
+  - tar xf TISEAN_3.0.1.tar.gz
 
 script:
-  - bash build_package.sh
+  - cd Tisean_3.0.1 && ./configure && make
 
