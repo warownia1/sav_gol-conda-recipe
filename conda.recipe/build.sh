@@ -1,3 +1,6 @@
+#!/bin/bash
+set -ev
+
 ./configure
 (cd source_c && make CC=${CC} sav_gol)
 mkdir -p $PREFIX/bin
