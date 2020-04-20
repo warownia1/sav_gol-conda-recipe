@@ -1,0 +1,23 @@
+{% set version="3.0.1" %}
+package:
+  name: sav_gol
+  version: {{ version }}
+
+source:
+  url: https://www.pks.mpg.de/~tisean/TISEAN_{{ version }}.tar.gz
+  sha256: cd6662505a2e411218f5d34ccb8bf206a6148b6c79b1cc8e4fa4dc11dfd00534
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - zlib
+
+about:
+  home: https://www.pks.mpg.de/~tisean/Tisean_3.0.1/
+  license: "GNU General Public License Version 2"
+  author: "Rainer Hegger & Thomas Schreiber"
+
